@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:xfc="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Core"
+	xmlns:localViews="clr-namespace:tempmatch.xamarin.Core.Views;assembly=tempmatch.xamarin.Core"
+	x:Class="tempmatch.xamarin.Core.Views.LoginView">
+	<ContentView.BackgroundColor>
+		<OnPlatform x:TypeArguments="Color"
+                  iOS="{StaticResource standardBackgroundColoriOS}"
+                  Android="{StaticResource standardBackgroundColorAndroid}"
+                  WinPhone="{StaticResource standardBackgroundColorWinPhone}" />
+	</ContentView.BackgroundColor>
+	<ContentView.Content>
+		<Grid RowSpacing="0" ColumnSpacing="0">
+			<Grid.BackgroundColor>
+				<OnPlatform x:TypeArguments="Color"
+		                  iOS="{StaticResource standardBackgroundColoriOS}"
+		                  Android="{StaticResource standardBackgroundColorAndroid}"
+		                  WinPhone="{StaticResource standardBackgroundColorWinPhone}" />
+			</Grid.BackgroundColor>
+			<Grid.RowDefinitions>
+
+				<!--Blank Space-->
+				<RowDefinition Height="*"/>
+
+				<!--Logo-->
+				<RowDefinition>
+					<RowDefinition.Height>
+                      <OnPlatform x:TypeArguments="xfc:GridLength"
+                                  iOS="200"
+                                  Android="200"
+                                  WinPhone="250" />
+                    </RowDefinition.Height>
+				</RowDefinition>
+
+				<!--Username-->
+				<RowDefinition>
+					<RowDefinition.Height>
+                      <OnPlatform x:TypeArguments="xfc:GridLength"
+                                  	iOS="50"
+					                Android="50"
+					                WinPhone="75" />
+                    </RowDefinition.Height>
+				</RowDefinition>
+
+				<!--Password-->
+				<RowDefinition>
+					<RowDefinition.Height>
+                      <OnPlatform x:TypeArguments="xfc:GridLength"
+                                  	iOS="50"
+					                Android="50"
+					                WinPhone="75" />
+                    </RowDefinition.Height>
+				</RowDefinition>
+
+				<!--Login Button-->
+				<RowDefinition>
+					<RowDefinition.Height>
+                      <OnPlatform x:TypeArguments="xfc:GridLength"
+	                                iOS="35"
+					                Android="35"
+					                WinPhone="50" />
+                    </RowDefinition.Height>
+				</RowDefinition>
+
+				<!--Terms and Conditions-->
+				<RowDefinition>
+					<RowDefinition.Height>
+                      <OnPlatform x:TypeArguments="xfc:GridLength"
+	                                iOS="50"
+					                Android="50"
+					                WinPhone="75" />
+                    </RowDefinition.Height>
+				</RowDefinition>
+
+				<!--Blank Space-->
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<Grid.ColumnDefinitions>
+				<!--Blank Space-->
+				<ColumnDefinition>
+                    <ColumnDefinition.Width>
+                        <OnPlatform x:TypeArguments="xfc:GridLength"
+                                iOS="50"
+                                Android="200"
+                                WinPhone="250" />
+                    </ColumnDefinition.Width>
+                </ColumnDefinition>
+
+                <!--Content Column-->
+				<ColumnDefinition Width="*"/>
+
+				<!--Blank Space-->
+				<ColumnDefinition>
+                    <ColumnDefinition.Width>
+                        <OnPlatform x:TypeArguments="xfc:GridLength"
+                                iOS="50"
+                                Android="200"
+                                WinPhone="250" />
+                    </ColumnDefinition.Width>
+                </ColumnDefinition>
+			</Grid.ColumnDefinitions>
+
+			<!--Blank Space-->
+			<ContentView Grid.Row="0" Grid.Column="0"
+				Grid.RowSpan="7"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				BackgroundColor="Transparent">
+			</ContentView>
+
+			<!--Blank Space-->
+			<ContentView Grid.Row="0" Grid.Column="2"
+				Grid.RowSpan="7"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				BackgroundColor="Transparent">
+			</ContentView>
+
+			<!--Blank Space-->
+			<ContentView Grid.Row="0" Grid.Column="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				BackgroundColor="Transparent">
+			</ContentView>
+
+			<!--Logo-->
+			<ContentView Grid.Row="1" Grid.Column="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				BackgroundColor="Transparent">
+				<ContentView.Padding>
+					<OnPlatform x:TypeArguments="Thickness"
+							    iOS="0, 0, 0, 5"
+							    Android="0, 0, 0, 5"
+							    WinPhone="0, 0, 0, 5"
+								/>
+				</ContentView.Padding>
+				<Image Aspect="AspectFit">
+					<Image.Source>
+						<OnPlatform x:TypeArguments="xfc:ImageSource"
+								    iOS="{StaticResource logoFileImageSource_iOS}"
+								    Android="{StaticResource logoFileImageSource_Android}"
+								    WinPhone="{StaticResource logoFileImageSource_WinPhone}"
+									/>
+					</Image.Source>
+				</Image>
+			</ContentView>
+
+			<!--Username-->
+			<ContentView Grid.Row="2" Grid.Column="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				BackgroundColor="Transparent">
+				<ContentView.Padding>
+					<OnPlatform x:TypeArguments="Thickness"
+							    iOS="0, 0, 0, 5"
+							    Android="0, 0, 0, 5"
+							    WinPhone="0, 0, 0, 5"
+								/>
+				</ContentView.Padding>
+				<Entry Placeholder="Username" 
+					Text="{Binding Username}"/>
+			</ContentView>
+
+			<!--Password-->
+			<ContentView Grid.Row="3" Grid.Column="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				BackgroundColor="Transparent">
+				<ContentView.Padding>
+					<OnPlatform x:TypeArguments="Thickness"
+							    iOS="0, 0, 0, 5"
+							    Android="0, 0, 0, 5"
+							    WinPhone="0, 0, 0, 5"
+								/>
+				</ContentView.Padding>
+				<Entry Placeholder="Password"
+					Text="{Binding Password}"
+					IsPassword="true"/>
+			</ContentView>
+
+			<!--Login Button-->
+			<ContentView Grid.Row="4" Grid.Column="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				>
+				<ContentView.BackgroundColor>
+					<OnPlatform x:TypeArguments="Color"
+			                  iOS="{StaticResource standardForegroundColoriOS}"
+			                  Android="{StaticResource standardForegroundColorAndroid}"
+			                  WinPhone="{StaticResource standardForegroundColorWinPhone}" />
+				</ContentView.BackgroundColor>
+				<ContentView.Padding>
+					<OnPlatform x:TypeArguments="Thickness"
+							    iOS="0, 0, 0, 0"
+							    Android="0, 0, 0, 0"
+							    WinPhone="0, 0, 0, 0"
+								/>
+				</ContentView.Padding>
+				<Button Text="Login"
+					Command="{Binding LoginCommand}">
+					<Button.TextColor>
+						<OnPlatform x:TypeArguments="Color"
+				                  iOS="{StaticResource standardBackgroundColoriOS}"
+				                  Android="{StaticResource standardBackgroundColorAndroid}"
+				                  WinPhone="{StaticResource standardBackgroundColorWinPhone}" />
+					</Button.TextColor>
+				</Button>
+			</ContentView>
+
+			<!--Terms and Conditions-->
+			<ContentView Grid.Row="5" Grid.Column="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				BackgroundColor="Transparent">
+				<ContentView.Padding>
+					<OnPlatform x:TypeArguments="Thickness"
+							    iOS="0, 0, 0, 0"
+							    Android="0, 0, 0, 0"
+							    WinPhone="0, 0, 0, 0"
+								/>
+				</ContentView.Padding>
+				<Button HorizontalOptions="CenterAndExpand"
+						VerticalOptions="CenterAndExpand"
+						Text="Terms and Conditions"
+						FontSize="15"
+						Command="{Binding TermsAndConditionsCommand}">
+						<Button.TextColor>
+							<OnPlatform x:TypeArguments="Color"
+					                  iOS="{StaticResource standardForegroundColoriOS}"
+					                  Android="{StaticResource standardForegroundColorAndroid}"
+					                  WinPhone="{StaticResource standardForegroundColorWinPhone}" />
+						</Button.TextColor>
+						<Button.BackgroundColor>
+							<OnPlatform x:TypeArguments="Color"
+					                  iOS="{StaticResource standardBackgroundColoriOS}"
+					                  Android="{StaticResource standardBackgroundColorAndroid}"
+					                  WinPhone="{StaticResource standardBackgroundColorWinPhone}" />
+						</Button.BackgroundColor>
+				</Button>
+			</ContentView>
+
+			<!--Blank Space-->
+			<ContentView Grid.Row="6" Grid.Column="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				BackgroundColor="Transparent">
+			</ContentView>
+		</Grid>
+	</ContentView.Content>
+</ContentView>

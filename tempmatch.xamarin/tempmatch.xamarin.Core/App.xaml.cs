@@ -4,8 +4,7 @@ using Xamarin.Forms.Xaml;
 
 namespace tempmatch.xamarin.Core
 {
-	[XamlCompilation (XamlCompilationOptions.Compile)]
-	public partial class App : MvvmCross.Core.ViewModels.MvxApplication
+	public class App : MvvmCross.Core.ViewModels.MvxApplication
 	{
 		public override void Initialize ()
 		{

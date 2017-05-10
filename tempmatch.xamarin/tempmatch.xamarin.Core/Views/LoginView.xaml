@@ -2,6 +2,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:xfc="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Core"
+	xmlns:localCommonViews="clr-namespace:common.xamarin.Core.Views;assembly=common.xamarin.Core"
 	xmlns:localViews="clr-namespace:tempmatch.xamarin.Core.Views;assembly=tempmatch.xamarin.Core"
 	x:Class="tempmatch.xamarin.Core.Views.LoginView">
 	<ContentView.BackgroundColor>
@@ -82,7 +83,7 @@
 				<ColumnDefinition>
                     <ColumnDefinition.Width>
                         <OnPlatform x:TypeArguments="xfc:GridLength"
-                                iOS="50"
+                                iOS="20"
                                 Android="200"
                                 WinPhone="250" />
                     </ColumnDefinition.Width>
@@ -95,7 +96,7 @@
 				<ColumnDefinition>
                     <ColumnDefinition.Width>
                         <OnPlatform x:TypeArguments="xfc:GridLength"
-                                iOS="50"
+                                iOS="20"
                                 Android="200"
                                 WinPhone="250" />
                     </ColumnDefinition.Width>
@@ -160,7 +161,7 @@
 							    WinPhone="0, 0, 0, 5"
 								/>
 				</ContentView.Padding>
-				<Entry Placeholder="Username" 
+				<localCommonViews:EntryView Placeholder="Username" 
 					Text="{Binding Username}"/>
 			</ContentView>
 
@@ -176,7 +177,7 @@
 							    WinPhone="0, 0, 0, 5"
 								/>
 				</ContentView.Padding>
-				<Entry Placeholder="Password"
+				<localCommonViews:EntryView Placeholder="Password"
 					Text="{Binding Password}"
 					IsPassword="true"/>
 			</ContentView>
@@ -188,9 +189,9 @@
 				>
 				<ContentView.BackgroundColor>
 					<OnPlatform x:TypeArguments="Color"
-			                  iOS="{StaticResource standardForegroundColoriOS}"
-			                  Android="{StaticResource standardForegroundColorAndroid}"
-			                  WinPhone="{StaticResource standardForegroundColorWinPhone}" />
+			                  iOS="{StaticResource standardButtonBackgroundColoriOS}"
+			                  Android="{StaticResource standardButtonBackgroundColorAndroid}"
+			                  WinPhone="{StaticResource standardButtonBackgroundColorWinPhone}" />
 				</ContentView.BackgroundColor>
 				<ContentView.Padding>
 					<OnPlatform x:TypeArguments="Thickness"
@@ -203,9 +204,9 @@
 					Command="{Binding LoginCommand}">
 					<Button.TextColor>
 						<OnPlatform x:TypeArguments="Color"
-				                  iOS="{StaticResource standardBackgroundColoriOS}"
-				                  Android="{StaticResource standardBackgroundColorAndroid}"
-				                  WinPhone="{StaticResource standardBackgroundColorWinPhone}" />
+				                  iOS="{StaticResource standardButtonForegroundColoriOS}"
+				                  Android="{StaticResource standardButtonForegroundColorAndroid}"
+				                  WinPhone="{StaticResource standardButtonForegroundColorWinPhone}" />
 					</Button.TextColor>
 				</Button>
 			</ContentView>

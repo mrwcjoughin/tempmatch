@@ -128,16 +128,32 @@
       <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
     </Reference>
     <Reference Include="Validation">
-      <HintPath>..\packages\Validation.2.0.6.15003\lib\portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Validation.dll</HintPath>
+      <HintPath>..\packages\Validation.2.4.15\lib\netstandard1.3\Validation.dll</HintPath>
     </Reference>
     <Reference Include="PCLCrypto">
-      <HintPath>..\packages\PCLCrypto.1.0.2.15130\lib\Xamarin.iOS\PCLCrypto.dll</HintPath>
+      <HintPath>..\packages\PCLCrypto.2.0.147\lib\xamarinios10\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Windows.Core">
+      <HintPath>..\packages\PInvoke.Windows.Core.0.5.64\lib\portable-net45+win8+wpa81\PInvoke.Windows.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Kernel32">
+      <HintPath>..\packages\PInvoke.Kernel32.0.5.64\lib\portable-net45+win8+wpa81\PInvoke.Kernel32.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.BCrypt">
+      <HintPath>..\packages\PInvoke.BCrypt.0.5.64\lib\portable-net45+win8+wpa81\PInvoke.BCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.NCrypt">
+      <HintPath>..\packages\PInvoke.NCrypt.0.5.64\lib\portable-net45+win8+wpa81\PInvoke.NCrypt.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\tempmatch.xamarin.Core\tempmatch.xamarin.Core.csproj">
       <Project>{2810565C-673D-4283-9A5A-F4E4964F2F00}</Project>
       <Name>tempmatch.xamarin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common-xamarin\common.xamarin.Core\common.xamarin.Core.csproj">
+      <Project>{B4F24686-9056-416D-9388-5FD7D638E556}</Project>
+      <Name>common.xamarin.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -147,9 +163,20 @@
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="Renderers\ButtonViewRenderer.cs" />
+    <Compile Include="Renderers\EntryViewRenderer.cs" />
+    <Compile Include="Renderers\LabelViewRenderer.cs" />
+    <Compile Include="Renderers\ListViewRenderer.cs" />
+    <Compile Include="Renderers\RoundedBoxViewRenderer.cs" />
+    <Compile Include="Renderers\WebViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\TempMatch_Logo.png" />
+    <BundleResource Include="Resources\TempMatch_Logo%402x.png" />
+    <BundleResource Include="Resources\TempMatch_Logo%403x.png" />
+    <BundleResource Include="Resources\TempMatch_LaunchScreen.png" />
+    <BundleResource Include="Resources\TempMatch_LaunchScreen%402x.png" />
+    <BundleResource Include="Resources\TempMatch_LaunchScreen%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -180,6 +207,8 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small-50x50%401x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small-50x50%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-568h%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

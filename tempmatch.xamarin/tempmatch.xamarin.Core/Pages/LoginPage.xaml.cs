@@ -30,6 +30,12 @@ namespace tempmatch.xamarin.Core.Pages
 			this.BindingContext = new LoginViewModel ();
 		}
 
+		protected override void OnAppearing ()
+		{
+			base.OnAppearing ();
+			NavigationPage.SetHasNavigationBar (this, false);
+		}
+
 		#endregion Constructors
 
 		#region Properties

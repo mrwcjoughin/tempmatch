@@ -5,15 +5,15 @@
 	<Application.Resources>
 		<ResourceDictionary>
 			<Color x:Key="standardBackgroundColoriOS">
-				#00AEEF
+				White
             </Color>
 
             <Color x:Key="standardBackgroundColorAndroid">
-				#00AEEF
+				White
             </Color>
 
             <Color x:Key="standardBackgroundColorWinPhone">
-				#00AEEF
+				White
             </Color>
 
             <Color x:Key="secondaryBackgroundColoriOS">
@@ -29,15 +29,15 @@
             </Color>
 
             <Color x:Key="standardForegroundColoriOS">
-				White
+				Black
             </Color>
 
             <Color x:Key="standardForegroundColorAndroid">
-				White
+				Black
             </Color>
 
             <Color x:Key="standardForegroundColorWinPhone">
-				White
+				Black
             </Color>
 
             <Color x:Key="secondaryForegroundColoriOS">
@@ -64,6 +64,30 @@
 				Gray
             </Color>
 
+			<Color x:Key="standardButtonForegroundColoriOS">
+				White
+            </Color>
+
+            <Color x:Key="standardButtonForegroundColorAndroid">
+				White
+            </Color>
+
+            <Color x:Key="standardButtonForegroundColorWinPhone">
+				White
+            </Color>
+
+			<Color x:Key="standardButtonBackgroundColoriOS">
+				#00aeef
+            </Color>
+
+            <Color x:Key="standardButtonBackgroundColorAndroid">
+				#00aeef
+            </Color>
+
+            <Color x:Key="standardButtonBackgroundColorWinPhone">
+				#00aeef
+            </Color>
+			
             <Color x:Key="pageBackgroundColoriOS">
 				#f6f6fa
             </Color>
@@ -315,15 +339,15 @@
             <Thickness x:Key="allRoundViewPaddingThicknessWinPhone">0, 12, 0, 12</Thickness>
 			
             <FileImageSource x:Key="logoFileImageSource_iOS"
-            	File="Logo.png"
+            	File="TempMatch_Logo.png"
             	/>
 
 			<FileImageSource x:Key="logoFileImageSource_Android"
-            	File="Logo.png"
+            	File="TempMatch_Logo.png"
             	/>
 
 			<FileImageSource x:Key="logoFileImageSource_WinPhone"
-            	File="Resources/Images/Logo.png"
+            	File="Resources/Images/TempMatch_Logo.png"
             	/>
 
             <FileImageSource x:Key="backFileImageSource_iOS"

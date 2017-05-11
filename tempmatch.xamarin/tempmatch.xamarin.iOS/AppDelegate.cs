@@ -32,6 +32,12 @@ namespace tempmatch.xamarin.iOS
 			var startup = Mvx.Resolve<IMvxAppStart> ();
 			startup.Start ();
 
+			Xamarin.IQKeyboardManager.SharedManager.Enable = true;
+			Xamarin.IQKeyboardManager.SharedManager.EnableAutoToolbar = true;
+			Xamarin.IQKeyboardManager.SharedManager.ShouldResignOnTouchOutside = true;
+			Xamarin.IQKeyboardManager.SharedManager.ShouldShowTextFieldPlaceholder = true;
+			Xamarin.IQKeyboardManager.SharedManager.ToolbarManageBehaviour = Xamarin.IQAutoToolbarManageBehaviour.Tag;
+
 			Window.MakeKeyAndVisible ();
 
 			return true;

@@ -87,6 +87,18 @@
             <Color x:Key="standardButtonBackgroundColorWinPhone">
 				#00aeef
             </Color>
+
+			<Color x:Key="standardEntryBorderColoriOS">
+				#00aeef
+            </Color>
+
+            <Color x:Key="standardEntryBorderColorAndroid">
+				#00aeef
+            </Color>
+
+            <Color x:Key="standardEntryBorderColorWinPhone">
+				#00aeef
+            </Color>
 			
             <Color x:Key="pageBackgroundColoriOS">
 				#f6f6fa
@@ -326,6 +338,18 @@
 
             <GridLength x:Key="dataRowGridLengthHeightWinPhone">
 	            40
+            </GridLength>
+
+			<GridLength x:Key="entryGridLengthHeightiOS">
+	            60
+            </GridLength>
+
+            <GridLength x:Key="entryGridLengthHeightAndroid">
+	            60
+            </GridLength>
+
+            <GridLength x:Key="entryGridLengthHeightWinPhone">
+	            70
             </GridLength>
 
             <Thickness x:Key="zeroPaddingThickness">0, 0, 0, 0</Thickness>

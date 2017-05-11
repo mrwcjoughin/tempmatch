@@ -38,9 +38,9 @@
 				<RowDefinition>
 					<RowDefinition.Height>
                       <OnPlatform x:TypeArguments="xfc:GridLength"
-                                  	iOS="50"
-					                Android="50"
-					                WinPhone="75" />
+                                  	iOS="{StaticResource entryGridLengthHeightiOS}"
+					                Android="{StaticResource entryGridLengthHeightAndroid}"
+					                WinPhone="{StaticResource entryGridLengthHeightWinPhone}" />
                     </RowDefinition.Height>
 				</RowDefinition>
 
@@ -48,12 +48,15 @@
 				<RowDefinition>
 					<RowDefinition.Height>
                       <OnPlatform x:TypeArguments="xfc:GridLength"
-                                  	iOS="50"
-					                Android="50"
-					                WinPhone="75" />
+                                  	iOS="{StaticResource entryGridLengthHeightiOS}"
+					                Android="{StaticResource entryGridLengthHeightAndroid}"
+					                WinPhone="{StaticResource entryGridLengthHeightWinPhone}" />
                     </RowDefinition.Height>
 				</RowDefinition>
 
+				<!--Blank Space-->
+				<RowDefinition Height="50"/>
+				
 				<!--Login Button-->
 				<RowDefinition>
 					<RowDefinition.Height>
@@ -161,8 +164,20 @@
 							    WinPhone="0, 0, 0, 5"
 								/>
 				</ContentView.Padding>
-				<localCommonViews:EntryView Placeholder="Username" 
-					Text="{Binding Username}"/>
+				<localCommonViews:EntryView
+					BackgroundColor="Transparent"
+					Placeholder="Username"
+					PlaceholderColor="Gray"
+					Text="{Binding Username}"
+					ValidationText="{Binding UsernameValidation}"
+					>
+					<ContentView.BorderColor>
+						<OnPlatform x:TypeArguments="Color"
+				                  iOS="{StaticResource standardEntryBorderColoriOS}"
+				                  Android="{StaticResource standardEntryBorderColorAndroid}"
+				                  WinPhone="{StaticResource standardEntryBorderColorWinPhone}" />
+					</ContentView.BorderColor>
+				</localCommonViews:EntryView>
 			</ContentView>
 
 			<!--Password-->
@@ -177,13 +192,24 @@
 							    WinPhone="0, 0, 0, 5"
 								/>
 				</ContentView.Padding>
-				<localCommonViews:EntryView Placeholder="Password"
+				<localCommonViews:EntryView
+					BackgroundColor="Transparent"
+					Placeholder="Password"
+					PlaceholderColor="Gray"
 					Text="{Binding Password}"
-					IsPassword="true"/>
+					ValidationText="{Binding PasswordValidation}"
+					IsPassword="true">
+					<ContentView.BorderColor>
+						<OnPlatform x:TypeArguments="Color"
+				                  iOS="{StaticResource standardEntryBorderColoriOS}"
+				                  Android="{StaticResource standardEntryBorderColorAndroid}"
+				                  WinPhone="{StaticResource standardEntryBorderColorWinPhone}" />
+					</ContentView.BorderColor>
+				</localCommonViews:EntryView>
 			</ContentView>
 
 			<!--Login Button-->
-			<ContentView Grid.Row="4" Grid.Column="1"
+			<ContentView Grid.Row="5" Grid.Column="1"
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions="FillAndExpand"
 				>
@@ -212,7 +238,7 @@
 			</ContentView>
 
 			<!--Terms and Conditions-->
-			<ContentView Grid.Row="5" Grid.Column="1"
+			<ContentView Grid.Row="6" Grid.Column="1"
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions="FillAndExpand"
 				BackgroundColor="Transparent">

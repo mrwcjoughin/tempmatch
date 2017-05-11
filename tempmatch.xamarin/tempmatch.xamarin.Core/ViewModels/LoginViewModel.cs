@@ -8,8 +8,10 @@ namespace tempmatch.xamarin.Core.ViewModels
 	{
 		#region Fields
 
-		private string _userName = "matthew.joughin@gmail.com";
-		private string _password = "P@ssw0rd!";
+		private string _userName = string.Empty;
+		private string _password = string.Empty;
+		private string _usernameValidation = string.Empty;
+		private string _passwordValidation = string.Empty;
 
 		private IMvxAsyncCommand _loginCommand = null;
 		private IMvxAsyncCommand _termsAndConditionsCommand = null;
@@ -37,6 +39,20 @@ namespace tempmatch.xamarin.Core.ViewModels
 			{
 				_userName = value;
 				SetProperty(ref _userName, value);
+				UpdateValidation();
+			}
+		}
+
+		public string UsernameValidation
+		{
+			get
+			{
+				return _usernameValidation;
+			}
+			set
+			{
+				_usernameValidation = value;
+				SetProperty(ref _usernameValidation, value);
 			}
 		}
 
@@ -50,6 +66,20 @@ namespace tempmatch.xamarin.Core.ViewModels
 			{
 				_password = value;
 				SetProperty(ref _password, value);
+				UpdateValidation();
+			}
+		}
+
+		public string PasswordValidation
+		{
+			get
+			{
+				return _passwordValidation;
+			}
+			set
+			{
+				_passwordValidation = value;
+				SetProperty(ref _passwordValidation, value);
 			}
 		}
 
@@ -146,6 +176,27 @@ namespace tempmatch.xamarin.Core.ViewModels
 				{
 					IsLoading = false;
 				}
+			}
+		}
+
+		private void UpdateValidation()
+		{
+			if (Username.Length == 0)
+			{
+				UsernameValidation = string.Empty;
+			}
+			else
+			{
+				UsernameValidation = "Field is required";
+			}
+
+			if (Password.Length == 0)
+			{
+				PasswordValidation = string.Empty;
+			}
+			else
+			{
+				PasswordValidation = "Field is required";
 			}
 		}
 

@@ -98,7 +98,80 @@ namespace tempmatch.xamarin.core.iOS
 			Control.Font = UIFont.FromName(font.FontFamily, (float)view.FontSize);// view.FontSize;
 //			}
 		}
+		/*
+		public override void LayoutSubviews()
+		{
+			base.LayoutSubviews();
+			BringSubviewToFront(FloatingLabel);
 
+			Action updateLabelAction = () =>
+			{
+				if (!string.IsNullOrEmpty(Text))
+				{
+					FloatingLabel.Alpha = 1.0f;
+					FloatingLabel.Frame =
+						             new CGRect(
+							             FloatingLabel.Frame.Location.X,
+							             - FloatingLabel.Font.LineHeight/2,
+							             FloatingLabel.Frame.Size.Width + 20f,
+							             FloatingLabel.Frame.Size.Height);
+				}
+				else
+				{
+					FloatingLabel.Alpha = 0.0f;
+					FloatingLabel.Frame =
+						             new CGRect(
+							             FloatingLabel.Frame.Location.X,
+							             FloatingLabel.Font.LineHeight,
+							             FloatingLabel.Frame.Size.Width + 20f,
+							             FloatingLabel.Frame.Size.Height);
+				}
+			};
+
+			if (IsFirstResponder)
+			{
+				FloatingLabel.TextColor = FloatingLabelActiveTextColor;
+
+				var shouldFloat = !string.IsNullOrEmpty(Text);
+				var isFloating = FloatingLabel.Alpha == 1f;
+
+				if (shouldFloat == isFloating)
+				{
+					updateLabelAction();
+				}
+				else
+				{
+					UIView.Animate(
+						0.3f,
+						0.0f,
+						UIViewAnimationOptions.BeginFromCurrentState | UIViewAnimationOptions.CurveEaseOut,
+						updateLabelAction,
+						() => { });
+				}
+			}
+			else
+			{
+				FloatingLabel.TextColor = FloatingLabelTextColor;
+				if (FloatingLabel.Text == null)
+				{
+					FloatingLabel.Text = string.Empty;
+				}
+				if (this.IsPicker)
+				{
+					FloatingLabel.Text = FloatingLabel.Text.Replace("Select ", string.Empty);
+				}
+				if (FloatingLabel != null && FloatingLabel.Text != null)
+				{
+					if (!FloatingLabel.Text.EndsWith(IsRequiredText))
+					{
+						FloatingLabel.Text = FloatingLabel.Text + IsRequiredText;
+					}
+				}
+
+				updateLabelAction();
+			}
+		}
+		*/
 		#endregion Methods
 	}
 }

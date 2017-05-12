@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using common.xamarin.Core.ViewModels;
 using MvvmCross.Core.ViewModels;
 
 namespace tempmatch.xamarin.Core.ViewModels
@@ -22,7 +23,7 @@ namespace tempmatch.xamarin.Core.ViewModels
 
 		public LoginViewModel ()
 		{
-
+			//UpdateValidation();
 		}
 
 		#endregion Constructors
@@ -39,7 +40,7 @@ namespace tempmatch.xamarin.Core.ViewModels
 			{
 				_userName = value;
 				SetProperty(ref _userName, value);
-				UpdateValidation();
+				OnPropertyChanged ("Username");
 			}
 		}
 
@@ -53,6 +54,7 @@ namespace tempmatch.xamarin.Core.ViewModels
 			{
 				_usernameValidation = value;
 				SetProperty(ref _usernameValidation, value);
+				OnPropertyChanged ("UsernameValidation");
 			}
 		}
 
@@ -66,7 +68,7 @@ namespace tempmatch.xamarin.Core.ViewModels
 			{
 				_password = value;
 				SetProperty(ref _password, value);
-				UpdateValidation();
+				OnPropertyChanged ("Password");
 			}
 		}
 
@@ -80,6 +82,7 @@ namespace tempmatch.xamarin.Core.ViewModels
 			{
 				_passwordValidation = value;
 				SetProperty(ref _passwordValidation, value);
+				OnPropertyChanged ("PasswordValidation");
 			}
 		}
 
@@ -170,7 +173,7 @@ namespace tempmatch.xamarin.Core.ViewModels
 				{
 					IsLoading = true;
 					//SessionContext.CurrentNavigationHandler.Navigate (new NavigationItem (aliens.loop.xamarin.core.Navigation.NavigationPages.TermsAndConditions, aliens.loop.xamarin.core.Navigation.NavigationViews.TermsAndConditions));
-					//ShowViewModel<TermsAndConditionsViewModel>();
+					ShowViewModel<TermsViewModel>();
 				}
 				finally
 				{
@@ -179,24 +182,30 @@ namespace tempmatch.xamarin.Core.ViewModels
 			}
 		}
 
-		private void UpdateValidation()
+		public override void UpdateValidation(string specificFieldName = null)
 		{
-			if (Username.Length == 0)
+			if ( (specificFieldName == null) || (specificFieldName == "Username") )
 			{
-				UsernameValidation = string.Empty;
-			}
-			else
-			{
-				UsernameValidation = "Field is required";
+				if (Username.Length > 0)
+				{
+					UsernameValidation = string.Empty;
+				}
+				else
+				{
+					UsernameValidation = "Field is required";
+				}
 			}
 
-			if (Password.Length == 0)
+			if ( (specificFieldName == null) || (specificFieldName == "Password") )
 			{
-				PasswordValidation = string.Empty;
-			}
-			else
-			{
-				PasswordValidation = "Field is required";
+				if (Password.Length > 0)
+				{
+					PasswordValidation = string.Empty;
+				}
+				else
+				{
+					PasswordValidation = "Field is required";
+				}
 			}
 		}
 

@@ -166,6 +166,8 @@
 				</ContentView.Padding>
 				<localCommonViews:EntryView
 					BackgroundColor="Transparent"
+					IsRequired="true"
+					FieldName="Username"
 					Placeholder="Username"
 					PlaceholderColor="Gray"
 					Text="{Binding Username}"
@@ -194,11 +196,14 @@
 				</ContentView.Padding>
 				<localCommonViews:EntryView
 					BackgroundColor="Transparent"
+					IsRequired="true"
+					IsPassword="true"
+					FieldName="Password"
 					Placeholder="Password"
 					PlaceholderColor="Gray"
 					Text="{Binding Password}"
 					ValidationText="{Binding PasswordValidation}"
-					IsPassword="true">
+					>
 					<ContentView.BorderColor>
 						<OnPlatform x:TypeArguments="Color"
 				                  iOS="{StaticResource standardEntryBorderColoriOS}"

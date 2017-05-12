@@ -13,6 +13,7 @@ using UIKit;
 using CoreGraphics;
 using Foundation;
 using CoreAnimation;
+using common.xamarin.Core.ViewModels;
 
 [assembly: ExportRenderer (typeof (common.xamarin.Core.Views.EntryView), typeof (tempmatch.xamarin.core.iOS.EntryViewRenderer))]
 namespace tempmatch.xamarin.core.iOS
@@ -22,7 +23,7 @@ namespace tempmatch.xamarin.core.iOS
 		#region Fields
 
 		public static UIColor FloatingLabelActiveTextColor = UIColor.Blue;
-		public static string IsRequiredText = "*";
+		public static string IsRequiredText = " *";
 
 		#endregion Fields
 
@@ -46,6 +47,22 @@ namespace tempmatch.xamarin.core.iOS
 		{ 
 			get; 
 			set;
+		}
+
+		protected EntryView EntryView
+		{
+			get
+			{
+				return (EntryView)Element;
+			}
+		}
+
+		protected BaseViewModel ViewModel
+		{
+			get
+			{
+				return (BaseViewModel) EntryView.BindingContext;
+			}
 		}
 
 		#endregion Properties
@@ -114,19 +131,18 @@ namespace tempmatch.xamarin.core.iOS
 			{
 				base.OnElementChanged(e);
 
-				var view = (EntryView)Element;
-				if (view != null) 
+				if (this.EntryView != null) 
 				{
 					InitView(Control);
-					DrawBorder (view);
+					DrawBorder (this.EntryView);
 					//SetFont(view);
 					//SetFontSize(view);
-					SetPlaceholderTextColor (view);
+					SetPlaceholderTextColor (this.EntryView);
 	                //Control.BorderStyle = UITextBorderStyle.None;
 
 					Control.EditingChanged += Control_ValueChanged;
 
-					FloatingLabel.TextColor = view.PlaceholderColor.ToUIColor();
+					FloatingLabel.TextColor = this.EntryView.PlaceholderColor.ToUIColor();
 				}
 			}
 			catch(Exception ex)
@@ -137,10 +153,9 @@ namespace tempmatch.xamarin.core.iOS
 
 		void Control_ValueChanged (object sender, EventArgs e)
 		{
-			var view = (EntryView)Element;
-
+			this.ViewModel.UpdateValidation(this.EntryView.FieldName);
 			FloatingLabel.Text = Control.Text.Length > 0 ? Control.Placeholder : string.Empty;
-			ValidationLabel.Text = view.ValidationText;
+			ValidationLabel.Text = this.EntryView.ValidationText;
 		}
 
 		protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -149,26 +164,27 @@ namespace tempmatch.xamarin.core.iOS
 			{
 				base.OnElementPropertyChanged(sender, e);
 
-				var view = (EntryView)Element;
-
-				if (view != null) 
+				if (this.EntryView != null) 
 				{
-					DrawBorder (view);
+					DrawBorder (this.EntryView);
 
 					if (string.IsNullOrEmpty (e.PropertyName) || e.PropertyName == "Font")
 					{
-						SetFont (view);
+						SetFont (this.EntryView);
 					}
 
 					if (string.IsNullOrEmpty (e.PropertyName) || e.PropertyName == "FontSize")
 					{
-						SetFontSize (view);
+						SetFontSize (this.EntryView);
 					}
 
 					if (string.IsNullOrEmpty (e.PropertyName) || e.PropertyName == "PlaceholderTextColor")
 					{
-						SetPlaceholderTextColor (view);
+						SetPlaceholderTextColor (this.EntryView);
 					}
+
+					//this.ViewModel.UpdateValidation();
+					ValidationLabel.Text = this.EntryView.ValidationText;
 				}
 			}
 			catch(Exception ex)
@@ -248,14 +264,21 @@ namespace tempmatch.xamarin.core.iOS
 			//	//{
 			//	//	FloatingLabel.Text = FloatingLabel.Text.Replace("Select ", string.Empty);
 			//	//}
-			//	if (FloatingLabel != null && FloatingLabel.Text != null)
-			//	{
-			//		if (!FloatingLabel.Text.EndsWith(IsRequiredText))
-			//		{
-			//			FloatingLabel.Text = FloatingLabel.Text + IsRequiredText;
-			//		}
-			//	}
+			if (EntryView.IsRequired)
+			{
+				if (!EntryView.Placeholder.EndsWith(IsRequiredText))
+				{
+					EntryView.Placeholder = EntryView.Placeholder + IsRequiredText;
+				}
 
+				if (FloatingLabel != null && FloatingLabel.Text != null)
+				{
+					if (!FloatingLabel.Text.EndsWith(IsRequiredText))
+					{
+						FloatingLabel.Text = FloatingLabel.Text + IsRequiredText;
+					}
+				}
+			}
 			//	updateLabelAction();
 			//}
 

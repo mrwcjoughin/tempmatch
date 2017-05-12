@@ -140,7 +140,6 @@
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="StylesPage.xaml.cs">
       <DependentUpon>StylesPage.xaml</DependentUpon>
     </Compile>

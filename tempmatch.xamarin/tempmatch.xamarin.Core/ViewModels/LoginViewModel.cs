@@ -9,9 +9,9 @@ namespace tempmatch.xamarin.Core.ViewModels
 	{
 		#region Fields
 
-		private string _userName = string.Empty;
+		private string _emailAddress = string.Empty;
 		private string _password = string.Empty;
-		private string _usernameValidation = string.Empty;
+		private string _emailAddressValidation = string.Empty;
 		private string _passwordValidation = string.Empty;
 
 		private IMvxAsyncCommand _loginCommand = null;
@@ -23,38 +23,38 @@ namespace tempmatch.xamarin.Core.ViewModels
 
 		public LoginViewModel ()
 		{
-			//UpdateValidation();
+			
 		}
 
 		#endregion Constructors
 
 		#region Properties
 
-		public string Username
+		public string EmailAddress
 		{
 			get
 			{
-				return _userName;
+				return _emailAddress;
 			}
 			set
 			{
-				_userName = value;
-				SetProperty(ref _userName, value);
-				OnPropertyChanged ("Username");
+				_emailAddress = value;
+				SetProperty(ref _emailAddress, value);
+				OnPropertyChanged ("EmailAddress");
 			}
 		}
 
-		public string UsernameValidation
+		public string EmailAddressValidation
 		{
 			get
 			{
-				return _usernameValidation;
+				return _emailAddressValidation;
 			}
 			set
 			{
-				_usernameValidation = value;
-				SetProperty(ref _usernameValidation, value);
-				OnPropertyChanged ("UsernameValidation");
+				_emailAddressValidation = value;
+				SetProperty(ref _emailAddressValidation, value);
+				OnPropertyChanged ("EmailAddressValidation");
 			}
 		}
 
@@ -184,15 +184,15 @@ namespace tempmatch.xamarin.Core.ViewModels
 
 		public override void UpdateValidation(string specificFieldName = null)
 		{
-			if ( (specificFieldName == null) || (specificFieldName == "Username") )
+			if ( (specificFieldName == null) || (specificFieldName == "EmailAddress") )
 			{
-				if (Username.Length > 0)
+				if (EmailAddress.Length > 0)
 				{
-					UsernameValidation = string.Empty;
+					EmailAddressValidation = string.Empty;
 				}
 				else
 				{
-					UsernameValidation = "Field is required";
+					EmailAddressValidation = "Field is required";
 				}
 			}
 

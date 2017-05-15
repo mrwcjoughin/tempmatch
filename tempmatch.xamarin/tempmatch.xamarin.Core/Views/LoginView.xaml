@@ -12,7 +12,11 @@
                   WinPhone="{StaticResource standardBackgroundColorWinPhone}" />
 	</ContentView.BackgroundColor>
 	<ContentView.Content>
-		<Grid RowSpacing="0" ColumnSpacing="0">
+		<ScrollView HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand">
+		<Grid HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand"
+			RowSpacing="0" ColumnSpacing="0">
 			<Grid.BackgroundColor>
 				<OnPlatform x:TypeArguments="Color"
 		                  iOS="{StaticResource standardBackgroundColoriOS}"
@@ -20,7 +24,6 @@
 		                  WinPhone="{StaticResource standardBackgroundColorWinPhone}" />
 			</Grid.BackgroundColor>
 			<Grid.RowDefinitions>
-
 				<!--Blank Space-->
 				<RowDefinition Height="*"/>
 
@@ -55,15 +58,15 @@
 				</RowDefinition>
 
 				<!--Blank Space-->
-				<RowDefinition Height="50"/>
+				<RowDefinition Height="*"/>
 				
 				<!--Login Button-->
 				<RowDefinition>
 					<RowDefinition.Height>
                       <OnPlatform x:TypeArguments="xfc:GridLength"
-	                                iOS="35"
-					                Android="35"
-					                WinPhone="50" />
+                                  	iOS="{StaticResource buttonGridLengthHeightiOS}"
+					                Android="{StaticResource buttonGridLengthHeightAndroid}"
+					                WinPhone="{StaticResource buttonGridLengthHeightWinPhone}" />
                     </RowDefinition.Height>
 				</RowDefinition>
 
@@ -71,14 +74,11 @@
 				<RowDefinition>
 					<RowDefinition.Height>
                       <OnPlatform x:TypeArguments="xfc:GridLength"
-	                                iOS="50"
-					                Android="50"
-					                WinPhone="75" />
+                                  	iOS="{StaticResource buttonGridLengthHeightiOS}"
+					                Android="{StaticResource buttonGridLengthHeightAndroid}"
+					                WinPhone="{StaticResource buttonGridLengthHeightWinPhone}" />
                     </RowDefinition.Height>
 				</RowDefinition>
-
-				<!--Blank Space-->
-				<RowDefinition Height="*"/>
 			</Grid.RowDefinitions>
 
 			<Grid.ColumnDefinitions>
@@ -167,11 +167,11 @@
 				<localCommonViews:EntryView
 					BackgroundColor="Transparent"
 					IsRequired="true"
-					FieldName="Username"
-					Placeholder="Username"
+					FieldName="EmailAddress"
+					Placeholder="Email Address"
 					PlaceholderColor="Gray"
-					Text="{Binding Username}"
-					ValidationText="{Binding UsernameValidation}"
+					Text="{Binding EmailAddress}"
+					ValidationText="{Binding EmailAddressValidation}"
 					>
 					<ContentView.BorderColor>
 						<OnPlatform x:TypeArguments="Color"
@@ -273,13 +273,7 @@
 						</Button.BackgroundColor>
 				</Button>
 			</ContentView>
-
-			<!--Blank Space-->
-			<ContentView Grid.Row="6" Grid.Column="1"
-				HorizontalOptions="FillAndExpand"
-				VerticalOptions="FillAndExpand"
-				BackgroundColor="Transparent">
-			</ContentView>
 		</Grid>
+		</ScrollView>
 	</ContentView.Content>
 </ContentView>

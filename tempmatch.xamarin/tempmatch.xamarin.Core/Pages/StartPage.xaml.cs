@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace tempmatch.xamarin.Core.Pages
 {
 	[XamlCompilation (XamlCompilationOptions.Compile)]
-	public partial class LoginPage : ContentPage //, INavigationPage
+	public partial class StartPage : ContentPage //, INavigationPage
 	{
 		#region Fields
 
@@ -21,52 +21,36 @@ namespace tempmatch.xamarin.Core.Pages
 
 		#region Constructors
 
-		public LoginPage ()
+		public StartPage ()
 		{
 			this.Resources = SessionContext.Resources;
 
 			InitializeComponent();
 
-			this.BindingContext = new LoginViewModel ();
+			this.BindingContext = new StartViewModel ();
 		}
 
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
-			//NavigationPage.SetHasNavigationBar (this, false);
+			NavigationPage.SetHasNavigationBar (this, false);
 		}
 
 		#endregion Constructors
 
 		#region Properties
 
-		public LoginViewModel LoginViewModel
+		public StartViewModel StartViewModel
 		{
 			get
 			{
-				return (LoginViewModel)this.BindingContext;
+				return (StartViewModel)this.BindingContext;
 			}
 			set
 			{
 				this.BindingContext = value;
 			}
 		}
-
-		//public INavigationItem NavigationItem
-		//{
-		//	get
-		//	{
-		//		return _navigationItem;
-		//	}
-		//}
-
-		//public INavigationItem PreviousNavigationItem
-		//{
-		//	get
-		//	{
-		//		return _previousNavigationItem;
-		//	}
-		//}
 
 		//public common.xamarin.Core.ViewModels.BaseViewModel BaseViewModel
 		//{
@@ -79,28 +63,6 @@ namespace tempmatch.xamarin.Core.Pages
 		#endregion Properties
 
 		#region Methods
-
-		public bool Init(/*INavigationItem navigationItem*/)
-		{
-			bool result = false;
-
-			//if (_navigationItem != null)
-			//{
-			//	_previousNavigationItem = _navigationItem;
-			//}
-
-			//_navigationItem = navigationItem;
-
-			LoginViewModel loginViewModel = new LoginViewModel();
-
-			//loginViewModel.Init();
-
-			this.LoginViewModel = loginViewModel;
-
-			result = true;
-
-			return result;
-		}
 
 		public async Task DisplayAlert(Alert alert)
 		{

@@ -88,6 +88,18 @@
 				#00aeef
             </Color>
 
+			<Color x:Key="alternativeButtonForegroundColoriOS">
+				#00aeef
+            </Color>
+
+            <Color x:Key="alternativeButtonForegroundColorAndroid">
+				#00aeef
+            </Color>
+
+            <Color x:Key="alternativeButtonForegroundColorWinPhone">
+				#00aeef
+            </Color>
+
 			<Color x:Key="standardEntryBorderColoriOS">
 				#00aeef
             </Color>
@@ -352,6 +364,18 @@
 	            70
             </GridLength>
 
+			<GridLength x:Key="buttonGridLengthHeightiOS">
+	            50
+            </GridLength>
+
+            <GridLength x:Key="buttonGridLengthHeightAndroid">
+	            50
+            </GridLength>
+
+            <GridLength x:Key="buttonGridLengthHeightWinPhone">
+	            60
+            </GridLength>
+
             <Thickness x:Key="zeroPaddingThickness">0, 0, 0, 0</Thickness>
 
             <Thickness x:Key="standardViewPaddingThicknessiOS">12, 0, 12, 0</Thickness>
@@ -372,6 +396,18 @@
 
 			<FileImageSource x:Key="logoFileImageSource_WinPhone"
             	File="Resources/Images/TempMatch_Logo.png"
+            	/>
+
+			<FileImageSource x:Key="avatarFileImageSource_iOS"
+            	File="avatar.png"
+            	/>
+
+			<FileImageSource x:Key="avatarFileImageSource_Android"
+            	File="avatar.png"
+            	/>
+
+			<FileImageSource x:Key="avatarFileImageSource_WinPhone"
+            	File="Resources/Images/avatar.png"
             	/>
 
             <FileImageSource x:Key="backFileImageSource_iOS"

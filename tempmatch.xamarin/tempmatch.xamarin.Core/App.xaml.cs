@@ -21,7 +21,7 @@ namespace tempmatch.xamarin.Core
 
 			SessionContext.Init ();
 
-			RegisterAppStart<ViewModels.LoginViewModel> ();
+			RegisterAppStart<ViewModels.StartViewModel> ();
 		}
 	}
 }

@@ -169,9 +169,8 @@
                     <xlf:ImageButton BackgroundColor="Transparent"
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand"
-                        Command="ChooseAvatarCommand"
-                        Image="{Binding AvatarImageSource}">
-<!--                        <xlf:ImageButton.Image Aspect="AspectFit"
+                        Command="ChooseAvatarCommand">
+                        <xlf:ImageButton.Image Aspect="AspectFit"
                             HorizontalOptions="CenterAndExpand"
                             VerticalOptions="CenterAndExpand">
 							<OnPlatform x:TypeArguments="FileImageSource"
@@ -179,13 +178,7 @@
 									    Android="{StaticResource avatarFileImageSource_iOS}"
 									    WinPhone="{StaticResource avatarFileImageSource_iOS}"
 										/>
-                        </xlf:ImageButton.Image>-->
-                        <Image Aspect="AspectFit"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="FillAndExpand"
-                            BackgroundColor="Transparent"
-                            Source="{Binding AvatarImageSource}">
-                        </Image>
+                        </xlf:ImageButton.Image>
                     </xlf:ImageButton>
     			</ContentView>
 

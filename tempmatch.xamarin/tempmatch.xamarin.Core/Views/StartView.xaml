@@ -37,7 +37,7 @@
                                   	iOS="{StaticResource buttonGridLengthHeightiOS}"
 					                Android="{StaticResource buttonGridLengthHeightAndroid}"
 					                WinPhone="{StaticResource buttonGridLengthHeightWinPhone}" />
-                    </RowDefinition.Height>
+                    </RowDefinition.Height> 
 				</RowDefinition>
 				
 				<!--Logo-->

@@ -29,21 +29,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\packages\MvvmCross.Platform.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\packages\MvvmCross.Core.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Forms.Presenter.Core">
-      <HintPath>..\packages\MvvmCross.Forms.Presenter.4.4.0\lib\portable-net45+netcore45+wpa81+MonoAndroid10+Xamarin.iOS10\MvvmCross.Forms.Presenter.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Extensions">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8+wpa81\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
@@ -80,9 +65,6 @@
     <Reference Include="AWSSDK.S3">
       <HintPath>..\packages\AWSSDK.S3.3.3.6.1\lib\portable-net45+win8+wpa81+wp8\AWSSDK.S3.dll</HintPath>
     </Reference>
-    <Reference Include="AWSSDK.SecurityToken">
-      <HintPath>..\packages\AWSSDK.SecurityToken.3.3.1.9\lib\portable-net45+win8+wpa81+wp8\AWSSDK.SecurityToken.dll</HintPath>
-    </Reference>
     <Reference Include="AWSSDK.CognitoIdentity">
       <HintPath>..\packages\AWSSDK.CognitoIdentity.3.3.2.10\lib\portable-net45+win8+wpa81+wp8\AWSSDK.CognitoIdentity.dll</HintPath>
     </Reference>
@@ -112,6 +94,24 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.3.5.239-pre3\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\packages\MvvmCross.Platform.5.0.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\packages\MvvmCross.Core.5.0.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.Binding.5.0.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.Binding.5.0.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Forms">
+      <HintPath>..\packages\MvvmCross.Forms.5.0.0\lib\portable-net45+netcore45+wpa81+MonoAndroid10+Xamarin.iOS10\MvvmCross.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SecurityToken">
+      <HintPath>..\packages\AWSSDK.SecurityToken.3.3.2\lib\portable-net45+win8+wpa81+wp8\AWSSDK.SecurityToken.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +178,7 @@
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\common-xamarin\common.xamarin.Core\common.xamarin.Core.csproj">

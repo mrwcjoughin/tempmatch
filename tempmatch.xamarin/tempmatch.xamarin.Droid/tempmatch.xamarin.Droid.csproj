@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Xamarin.Build.Download.0.4.4\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.4\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -46,51 +46,6 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\packages\MvvmCross.Platform.4.4.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.Droid">
-      <HintPath>..\packages\MvvmCross.Platform.4.4.0\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core">
-      <HintPath>..\packages\MvvmCross.Core.4.4.0\lib\MonoAndroid\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid">
-      <HintPath>..\packages\MvvmCross.Core.4.4.0\lib\MonoAndroid\MvvmCross.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding">
-      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\MonoAndroid\MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Binding.Droid">
-      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\MonoAndroid\MvvmCross.Binding.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization">
-      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Shared">
-      <HintPath>..\packages\MvvmCross.Droid.Shared.4.4.0\lib\MonoAndroid\MvvmCross.Droid.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.Core.UI">
-      <HintPath>..\packages\MvvmCross.Droid.Support.Core.UI.4.4.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Core.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.Fragment">
-      <HintPath>..\packages\MvvmCross.Droid.Support.Fragment.4.4.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Fragment.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.V7.AppCompat">
-      <HintPath>..\packages\MvvmCross.Droid.Support.V7.AppCompat.4.4.0\lib\MonoAndroid70\MvvmCross.Droid.Support.V7.AppCompat.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.V7.RecyclerView">
-      <HintPath>..\packages\MvvmCross.Droid.Support.V7.RecyclerView.4.4.0\lib\MonoAndroid70\MvvmCross.Droid.Support.V7.RecyclerView.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.Support.Core.Utils">
-      <HintPath>..\packages\MvvmCross.Droid.Support.Core.Utils.4.4.1\lib\MonoAndroid70\MvvmCross.Droid.Support.Core.Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Forms.Presenter.Core">
-      <HintPath>..\packages\MvvmCross.Forms.Presenter.4.4.0\lib\MonoAndroid403\MvvmCross.Forms.Presenter.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Forms.Presenter.Droid">
-      <HintPath>..\packages\MvvmCross.Forms.Presenter.4.4.0\lib\MonoAndroid403\MvvmCross.Forms.Presenter.Droid.dll</HintPath>
-    </Reference>
     <Reference Include="PCLStorage.Abstractions">
       <HintPath>..\packages\PCLStorage.1.0.2\lib\monoandroid\PCLStorage.Abstractions.dll</HintPath>
     </Reference>
@@ -185,6 +140,51 @@
       <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\monoandroid\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\packages\MvvmCross.Platform.5.0.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.Droid">
+      <HintPath>..\packages\MvvmCross.Platform.5.0.0\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\packages\MvvmCross.Core.5.0.0\lib\MonoAndroid\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid">
+      <HintPath>..\packages\MvvmCross.Core.5.0.0\lib\MonoAndroid\MvvmCross.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.Binding.5.0.0\lib\MonoAndroid\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.Droid">
+      <HintPath>..\packages\MvvmCross.Binding.5.0.0\lib\MonoAndroid\MvvmCross.Binding.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.Binding.5.0.0\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Shared">
+      <HintPath>..\packages\MvvmCross.Droid.Shared.5.0.0\lib\MonoAndroid\MvvmCross.Droid.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.Core.UI">
+      <HintPath>..\packages\MvvmCross.Droid.Support.Core.UI.5.0.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.Core.Utils">
+      <HintPath>..\packages\MvvmCross.Droid.Support.Core.Utils.5.0.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Core.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.Fragment">
+      <HintPath>..\packages\MvvmCross.Droid.Support.Fragment.5.0.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Fragment.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.V7.RecyclerView">
+      <HintPath>..\packages\MvvmCross.Droid.Support.V7.RecyclerView.5.0.0\lib\MonoAndroid70\MvvmCross.Droid.Support.V7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.V7.AppCompat">
+      <HintPath>..\packages\MvvmCross.Droid.Support.V7.AppCompat.5.0.0\lib\MonoAndroid70\MvvmCross.Droid.Support.V7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Forms">
+      <HintPath>..\packages\MvvmCross.Forms.5.0.0\lib\MonoAndroid70\MvvmCross.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Forms.Droid">
+      <HintPath>..\packages\MvvmCross.Forms.5.0.0\lib\MonoAndroid70\MvvmCross.Forms.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\tempmatch.xamarin.Core\tempmatch.xamarin.Core.csproj">
@@ -220,6 +220,11 @@
     <AndroidResource Include="Resources\values\strings.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values-v21\styles.xml" />
+    <AndroidResource Include="Resources\drawable-mdpi\TempMatch_Logo.png" />
+    <AndroidResource Include="Resources\drawable\TempMatch_Logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TempMatch_Logo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TempMatch_Logo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\TempMatch_Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -236,7 +241,6 @@
     <Compile Include="MvxFormsApplicationActivity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
-  <Import Project="..\packages\Xamarin.Build.Download.0.4.4\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.4\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Annotations.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Core.UI.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets')" />
@@ -255,4 +259,5 @@
   <Import Project="..\packages\Xamarin.Android.Support.v7.MediaRouter.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.MediaRouter.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets')" />
   <Import Project="..\packages\Xamarin.Forms.2.3.5.239-pre3\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.5.239-pre3\build\netstandard1.0\Xamarin.Forms.targets')" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.targets')" />
 </Project>

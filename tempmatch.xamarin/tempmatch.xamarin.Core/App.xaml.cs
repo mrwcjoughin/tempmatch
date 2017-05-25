@@ -16,7 +16,7 @@ namespace tempmatch.xamarin.Core
 			SessionContext.App = this;
 
 			var styles = new StylesPage();
-			Xamarin.Forms.Application.Current.Resources = styles.Resources;
+			//Xamarin.Forms.Application.Current.Resources = styles.Resources;
 			SessionContext.Resources = styles.Resources;
 
 			SessionContext.Init ();

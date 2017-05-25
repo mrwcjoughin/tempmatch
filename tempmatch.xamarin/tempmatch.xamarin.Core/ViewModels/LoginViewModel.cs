@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using common.xamarin.Core.ViewModels;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 
 namespace tempmatch.xamarin.Core.ViewModels
@@ -21,7 +22,8 @@ namespace tempmatch.xamarin.Core.ViewModels
 
 		#region Constructors
 
-		public LoginViewModel ()
+		public LoginViewModel(IMvxNavigationService navigation)
+			: base(navigation)
 		{
 			
 		}
@@ -152,7 +154,7 @@ namespace tempmatch.xamarin.Core.ViewModels
 					//SessionContext.Password = this.Password;
 
 					//SessionContext.CurrentNavigationHandler.Navigate (new NavigationItem (aliens.loop.xamarin.core.Navigation.NavigationPages.Root, aliens.loop.xamarin.core.Navigation.NavigationViews.RecentLoops));
-					//ShowViewModel<DashboardViewModel>();
+					//_navigationService.Navigate<DashboardViewModel>();
 				} 
 				//catch(Exception)
 				//{
@@ -173,7 +175,7 @@ namespace tempmatch.xamarin.Core.ViewModels
 				{
 					IsLoading = true;
 					//SessionContext.CurrentNavigationHandler.Navigate (new NavigationItem (aliens.loop.xamarin.core.Navigation.NavigationPages.TermsAndConditions, aliens.loop.xamarin.core.Navigation.NavigationViews.TermsAndConditions));
-					ShowViewModel<TermsViewModel>();
+					_navigationService.Navigate<TermsViewModel>();
 				}
 				finally
 				{

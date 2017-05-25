@@ -3,9 +3,10 @@ using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Droid.Views;
-using MvvmCross.Forms.Presenter.Droid;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Core.Views;
+using MvvmCross.Forms.Droid.Presenters;
+using MvvmCross.Forms.Core;
 
 namespace tempmatch.xamarin.Droid
 {
@@ -28,7 +29,8 @@ namespace tempmatch.xamarin.Droid
 
 		protected override IMvxAndroidViewPresenter CreateViewPresenter ()
 		{
-			var presenter = new MvxFormsDroidPagePresenter ();
+			var xamarinFormsApp = new MvxFormsApplication();
+            var presenter = new MvxFormsDroidPagePresenter (xamarinFormsApp);
 			Mvx.RegisterSingleton<IMvxViewPresenter> (presenter);
 
 			return presenter;

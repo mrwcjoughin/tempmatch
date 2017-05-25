@@ -13,8 +13,6 @@ namespace tempmatch.xamarin.Core
 			this.Resources = SessionContext.Resources;
 
 			InitializeComponent();
-
-			this.BindingContext = new SignUpViewModel ();
 		}
 	}
 }

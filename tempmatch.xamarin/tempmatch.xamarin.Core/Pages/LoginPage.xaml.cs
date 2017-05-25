@@ -26,8 +26,6 @@ namespace tempmatch.xamarin.Core.Pages
 			this.Resources = SessionContext.Resources;
 
 			InitializeComponent();
-
-			this.BindingContext = new LoginViewModel ();
 		}
 
 		protected override void OnAppearing ()
@@ -45,10 +43,6 @@ namespace tempmatch.xamarin.Core.Pages
 			get
 			{
 				return (LoginViewModel)this.BindingContext;
-			}
-			set
-			{
-				this.BindingContext = value;
 			}
 		}
 
@@ -90,12 +84,6 @@ namespace tempmatch.xamarin.Core.Pages
 			//}
 
 			//_navigationItem = navigationItem;
-
-			LoginViewModel loginViewModel = new LoginViewModel();
-
-			//loginViewModel.Init();
-
-			this.LoginViewModel = loginViewModel;
 
 			result = true;
 

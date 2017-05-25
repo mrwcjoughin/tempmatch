@@ -26,8 +26,6 @@ namespace tempmatch.xamarin.Core.Pages
 			this.Resources = SessionContext.Resources;
 
 			InitializeComponent();
-
-			this.BindingContext = new StartViewModel ();
 		}
 
 		protected override void OnAppearing ()

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using common.xamarin.Core.ViewModels;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 
 namespace tempmatch.xamarin.Core.ViewModels
@@ -19,14 +20,15 @@ namespace tempmatch.xamarin.Core.ViewModels
 
 		#endregion Fields
 
-		#region Constructors
+        #region Constructors
 
-		public StartViewModel ()
-		{
-			
+		public StartViewModel(IMvxNavigationService navigation)
+            : base(navigation)
+        {
+
 		}
 
-		#endregion Constructors
+        #endregion Constructors
 
 		#region Properties
 
@@ -62,7 +64,7 @@ namespace tempmatch.xamarin.Core.ViewModels
 				{
 					IsLoading = true;
 
-					ShowViewModel<LoginViewModel>();
+					_navigationService.Navigate<LoginViewModel>();
 				}
 				finally
 				{
@@ -79,7 +81,7 @@ namespace tempmatch.xamarin.Core.ViewModels
 				{
 					IsLoading = true;
 
-					ShowViewModel<SignUpViewModel>();
+					_navigationService.Navigate<SignUpViewModel>();
 				}
 				finally
 				{

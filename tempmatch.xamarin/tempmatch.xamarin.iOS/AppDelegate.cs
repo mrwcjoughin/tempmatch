@@ -9,6 +9,10 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Forms.iOS;
 
+using Xamarin;
+using Xamarin.Forms;
+using tempmatch.xamarin.iOS.Providers;
+
 namespace tempmatch.xamarin.iOS
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -39,6 +43,8 @@ namespace tempmatch.xamarin.iOS
 			Xamarin.IQKeyboardManager.SharedManager.ShouldShowTextFieldPlaceholder = true;
 			Xamarin.IQKeyboardManager.SharedManager.ToolbarManageBehaviour = Xamarin.IQAutoToolbarManageBehaviour.Tag;
 
+			DependencyService.Register<AWSCloudProvider>();
+			
 			Window.MakeKeyAndVisible ();
 
 			return true;
